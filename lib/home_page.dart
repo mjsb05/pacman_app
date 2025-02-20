@@ -170,7 +170,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void moveRight() {
-    if (!Constains.barriers.contains(player - 1)) {
+    if (!Constains.barriers.contains(player + 1)) {
       setState(() {
         player++;
       });
@@ -178,7 +178,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void moveUp() {
-    if (!Constains.barriers.contains(player - 1)) {
+    if (!Constains.barriers.contains(player - numberInRow)) {
       setState(() {
         player -= numberInRow;
       });
@@ -186,7 +186,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   void moveDown() {
-    if (!Constains.barriers.contains(player - 1)) {
+    if (!Constains.barriers.contains(player + numberInRow)) {
       setState(() {
         player += numberInRow;
       });
