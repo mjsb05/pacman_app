@@ -49,13 +49,6 @@ class _HomePageState extends State<HomePage> {
   bool mouthClosed = false;
   int score = 0;
   bool paused = false;
-  AudioPlayer advancedPlayer = AudioPlayer();
-  AudioPlayer advancedPlayer2 = AudioPlayer();
-  AudioCache audioInGame = AudioCache(prefix: 'assets/');
-  AudioCache audioManch = AudioCache(prefix: 'assets/');
-  AudioCache audioDeath = AudioCache(prefix: 'assets/');
-  AudioCache audioPaused = AudioCache(prefix: 'assets/');
-
   String direction = 'right';
   String ghostLast = 'left';
   String ghostLast2 = 'up';
@@ -63,19 +56,11 @@ class _HomePageState extends State<HomePage> {
 
   void startGame() {
     if (preGame) {
-      advancedPlayer = AudioPlayer();
-
       preGame = false;
       getFood();
 
       Timer.periodic(Duration(milliseconds: 10), (timer) {
-        if (paused) {
-        } else {
-          advancedPlayer.resume();
-        }
         if (player == ghost || player == ghost2 || player == ghost3) {
-          advancedPlayer.stop();
-
           setState(() {
             player = -1;
           });
@@ -629,10 +614,8 @@ class _HomePageState extends State<HomePage> {
                       onTap: () {
                         if (!paused) {
                           paused = true;
-                          advancedPlayer.pause();
                         } else {
                           paused = false;
-                          advancedPlayer.stop();
                         }
                         const Icon(Icons.play_arrow, color: Colors.white);
                       }),
@@ -646,13 +629,10 @@ class _HomePageState extends State<HomePage> {
                             if (paused)
                               {
                                 paused = false,
-                                advancedPlayer.stop(),
                               }
                             else
                               {
                                 paused = true,
-                                advancedPlayer.pause(),
-                                audioPaused
                               }
                           })
               ],
