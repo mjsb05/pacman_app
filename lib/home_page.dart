@@ -1,13 +1,13 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:flutter/material.dart';
-import 'package:pac_man_app/constains.dart';
-import 'package:pac_man_app/ghost1.dart';
-import 'package:pac_man_app/ghost2.dart';
-import 'package:pac_man_app/ghost3.dart';
-import 'package:pac_man_app/path.dart';
-import 'package:pac_man_app/pisxel.dart';
-import 'package:pac_man_app/player.dart';
+import 'package:pacman_app/constains.dart';
+import 'package:pacman_app/ghost1.dart';
+import 'package:pacman_app/ghost2.dart';
+import 'package:pacman_app/ghost3.dart';
+import 'package:pacman_app/path.dart';
+import 'package:pacman_app/pixel.dart';
+import 'package:pacman_app/player.dart';
 
 void main() => runApp(const MyApp());
 

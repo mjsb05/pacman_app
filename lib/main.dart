@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:pac_man_app/home_page.dart';
+import 'package:pacman_app/home_page.dart';
 
 void main() {
   runApp(const MyApp());
